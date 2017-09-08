@@ -25,7 +25,6 @@ function _chartbeat_publishing_sections_load_terms($nid = 0) {
   
   // @FIXED
   $vocab = _chartbeat_vocab_array_format(Vocabulary::loadMultiple());
-  kint($vocab);die();
   foreach ($vocab as $key => $value) {
     $sections[] = $this->config('chartbeat.settings')->get('chartbeat_sections_'.$key);
   }
@@ -67,59 +66,7 @@ function _chartbeat_publishing_sections_load_terms($nid = 0) {
   return $term_string;
 }
 
-// function chartbeat_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
-// 	if($view->id() == 'content') {
-// 		$options = array(
-// 	      'id' => 'concurrent_views',
-// 	      'table' => 'node_field_data',
-// 	      'field' => 'concurrent_views',
-// 	      'label' => 'Concurrent Views',
-//           'exclude' => false,
-//           'alter' => ['text' => false],
-//           'element_class' => '',
-//           'element_default_classes' => true,
-//           'empty' => '',
-//           'hide_empty' => false,
-//           'empty_zero' => false,
-//           'hide_alter_empty' => true,
-//           'entity_type' => 'node',
-//           'entity_field' => 'concurrent_views',
-//           'type' => 'string',
-// 	    );
-// 	    $view->setHandler('page_1', 'field', 'concurrent_views', $options);
-// 	}
-// }
-
-// function chartbeat_views_pre_render(ViewExecutable $view) {
-//   	$api = \Drupal::config('chartbeat.settings')->get('chartbeat_api_key');
-// 	foreach($view->result as $index => $node) {
-// 		$node->concurrent = 'all';
-// 		$href = $node->nid;
-// 		if ($api) {
-//       		$host = $_SERVER['SERVER_NAME'];
-// 	      $req_http = "http://api.chartbeat.com/live/summary/v3/?apikey=$api&host=$host&keys=read&path=/node/$href";
-// 	      $response = \Drupal::httpClient()->get($req_http, array('headers' => array('Accept' => 'text/plain')));
-// 	      $data = (string) $response->getBody();
-//  		  $code = $response->getStatusCode();
-// 	      if ($code == 200) {
-// 	        $response = json_decode($data, TRUE);
-// 	        if (!empty($response)) {
-// 	          $num = (int) $response['read']['data']['sum'];
-// 	          $node['concurrent'] = $num;
-// 	        }
-// 	        else {
-// 	          $node['concurrent'] = 0;
-// 	        }
-// 	      }
-// 	    }
-// 	    // kint($view->display_handler);
-// 	    // kint($view->style_plugin->getField('concurrent_views'));die();
-// 	    // $view->display_handler->getOption('fields')['concurrent_views']['text'] = 'n/a';
-// 	    // else {
-// 	    //   $node['concurrent'] = 'n/a';
-// 	    // }
-// 	}
-// }
+// NEEDS FIX
 /**
  * Implements hook_form_FORM_ID_alter().
  */
@@ -135,10 +82,7 @@ function _chartbeat_publishing_sections_load_terms($nid = 0) {
 //       // @FIXME
 // // drupal_http_request() has been replaced by the Guzzle HTTP client, which is bundled
 // // with Drupal core.
-// // 
-// // 
-// // @see https://www.drupal.org/node/1862446
-// // @see http://docs.guzzlephp.org/en/latest
+
 // // $resp = drupal_http_request($req_http);
 
 
