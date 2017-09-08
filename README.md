@@ -1,1 +1,2 @@
-# chartbeat_d8
+# Chartbeat for Drupal 8.x
+--------------------------

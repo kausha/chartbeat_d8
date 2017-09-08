@@ -1,0 +1,14 @@
+chartbeat.admin_settings:
+  route_name: chartbeat.admin_settings
+  title: Settings
+  base_route: chartbeat.admin_settings
+chartbeat.dashboard_page:
+  route_name: chartbeat.dashboard_page
+  title: 'Chartbeat Dashboard'
+  weight: 1
+  base_route: chartbeat.admin_settings
+chartbeat.publishing_dashboard_page:
+  route_name: chartbeat.publishing_dashboard_page
+  title: 'Chartbeat Publishing Dashboard'
+  weight: 1
+  base_route: chartbeat.admin_settings

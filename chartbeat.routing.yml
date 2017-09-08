@@ -1,0 +1,24 @@
+chartbeat.admin_settings:
+  path: /admin/config/system/chartbeat
+  defaults:
+    _title: 'Chartbeat'
+    _description: 'Change the setting configuration when using Chartbeat.'
+    _form: Drupal\chartbeat\Form\ChartbeatAdminSettings
+  requirements:
+    _permission: 'administer chartbeat settings'
+chartbeat.dashboard_page:
+  path: /admin/config/system/chartbeat/dashboard
+  defaults:
+    _title: 'Chartbeat Dashboard'
+    _description: 'The dashboard for your Chartbeat site.'
+    _controller: '\Drupal\chartbeat\Controller\DefaultController::chartbeat_dashboard_page'
+  requirements:
+    _permission: 'administer chartbeat settings'
+chartbeat.publishing_dashboard_page:
+  path: /admin/config/system/chartbeat/publishing-dashboard
+  defaults:
+    _title: 'Chartbeat Publishing Dashboard'
+    _description: 'The dashboard for your Chartbeat Publishing account.'
+    _controller: '\Drupal\chartbeat\Controller\DefaultController::chartbeat_publishing_dashboard_page'
+  requirements:
+    _custom_access: '\Drupal\chartbeat\Controller\DefaultController::chartbeat_publishing_dashboard_permission'

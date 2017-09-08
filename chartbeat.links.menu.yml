@@ -1,0 +1,5 @@
+chartbeat.admin_settings:
+  route_name: chartbeat.admin_settings
+  title: Chartbeat
+  description: 'Change the setting configuration when using Chartbeat.'
+  parent: system.admin_config_system

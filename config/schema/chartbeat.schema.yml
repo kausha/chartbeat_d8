@@ -1,0 +1,20 @@
+chartbeat.settings:
+  type: mapping
+  label: Settings
+  mapping:
+    chartbeat_uid:
+      type: string
+    chartbeat_domain:
+      type: string
+    chartbeat_use_canonical:
+      type: boolean
+    chartbeat_cookies:
+      type: boolean
+    chartbeat_api_key:
+      type: string
+    chartbeat_sections_enable:
+      type: boolean
+    chartbeat_sections:
+      type: boolean
+    chartbeat_authors_enabled:
+      type: boolean
